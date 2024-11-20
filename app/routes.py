@@ -24,7 +24,7 @@ def webhook():
     print(f"Получена команда после очистки: '{user_request}'")
 
     end_session = False
-    response_text = "Извините, я не понял команду."
+    response_text = "Я че то не догоняю. Повтори а то не расслышал."
 
     # Логика обработки команды "Когда идем играть в теннис?"
     tennis_phrases = [
@@ -77,8 +77,7 @@ def webhook():
         response_text = RESPONSES["прочие"][
             {key.lower(): key for key in RESPONSES.get("прочие", {})}[user_request]
         ]
-        
-
+                
     return jsonify({
         "version": req['version'],
         "session": req['session'],
